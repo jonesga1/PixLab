@@ -84,5 +84,56 @@ public class IntArrayWorker {
 			}
 		}
 	}
+	
+	/**
+	 * 
+	 * check each spot in the matrix and see if it's equal to the number it's looking for.
+	 * adds one if the number is =.
+	 * 
+	 */
+	public int getCount(int numberToLookFor) {
+		int total = 0;
+		for (int row = 0; row < matrix.length; row++) {
+			for (int col = 0; col < matrix[0].length; col++) {
+				if (matrix[row][col] == numberToLookFor) {
+					total++;
+				}
+			}
+		}
+		return total;
+	}
+	/**
+	 * 
+	 * check each spot in the matrix, if the int is larger than a stored value, set int to stored value.
+	 */
+	public int getLargest() {
+		int largest = 0;
+		for (int row = 0; row < matrix.length; row++) {
+			for (int col = 0; col < matrix[0].length; col++) {
+				if (matrix[row][col] > largest) {
+					largest = matrix[row][col];
+				}
+			}
+		}
+		return largest;
+	}
+	/**
+	 * 
+	 * search each row and check if the column number is = to the column you want
+	 * if so add the value to a total
+	 * 
+	 */
+	public int getColTotal(int colToSearch) {
+		int total = 0;
+		for (int row = 0; row < matrix.length; row++) {
+			for (int col = 0; col < matrix[0].length; col++) {
+				if (col == colToSearch) {
+					total = total + matrix[row][col];
+				}
+			}
+		}
+		return total;
+		
+	}
 
 }
