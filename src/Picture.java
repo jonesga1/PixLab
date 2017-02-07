@@ -106,6 +106,7 @@ public class Picture extends SimplePicture {
 		}
 	}
 
+	//** Invert the colors of the pictures (255 - currentColorValue) */
 	public void negate() {
 		Pixel[][] pixels = this.getPixels2D();
 		for (Pixel[] rowArray : pixels) {
@@ -116,6 +117,22 @@ public class Picture extends SimplePicture {
 				pixelObj.setRed(255 - redValue);
 				pixelObj.setGreen(255 - greenValue);
 				pixelObj.setBlue(255 - blueValue);
+			}
+		}
+	}
+	
+	//** Set all colors to be black and white */
+	public void grayscale() {
+		Pixel[][] pixels = this.getPixels2D();
+		for (Pixel[] rowArray : pixels) {
+			for (Pixel pixelObj : rowArray) {
+				int redValue = pixelObj.getRed();
+				int greenValue = pixelObj.getGreen();
+				int blueValue = pixelObj.getBlue();
+				int average = (redValue + greenValue + blueValue)/2;
+				pixelObj.setRed(average);
+				pixelObj.setGreen(average);
+				pixelObj.setBlue(average);
 			}
 		}
 	}
