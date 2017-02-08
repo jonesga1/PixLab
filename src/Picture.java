@@ -129,10 +129,27 @@ public class Picture extends SimplePicture {
 				int redValue = pixelObj.getRed();
 				int greenValue = pixelObj.getGreen();
 				int blueValue = pixelObj.getBlue();
-				int average = (redValue + greenValue + blueValue)/2;
+				int average = (redValue + greenValue + blueValue)/3;
 				pixelObj.setRed(average);
 				pixelObj.setGreen(average);
 				pixelObj.setBlue(average);
+			}
+		}
+	}
+	
+	//** Set all colors to be black and white */
+	public void fixUnderwater() {
+		Pixel[][] pixels = this.getPixels2D();
+		for (Pixel[] rowArray : pixels) {
+			for (Pixel pixelObj : rowArray) {
+				int blueValue = pixelObj.getBlue();
+				int redValue = pixelObj.getRed();
+				int greenValue = pixelObj.getGreen();
+				if (blueValue > 151 && redValue < 28) {
+					pixelObj.setBlue(blueValue + 20);
+					pixelObj.setRed(redValue + 20);
+					pixelObj.setGreen(greenValue + 20);
+				}
 			}
 		}
 	}
