@@ -361,6 +361,19 @@ public class Picture extends SimplePicture {
 		this.mirrorVertical();
 		this.write("collage.jpg");
 	}
+	
+	public void myCollage() {
+		Picture swan = new Picture("swan.jpg");
+		Picture beach = new Picture("beach.jpg");
+		Picture arch = new Picture("arch.jpg");
+		beach.zeroBlue();
+		this.copy(beach, 0, 0);
+		arch.mirrorDiagonal();
+		this.copy(arch, 0, 0);
+		this.partCopy(swan, 0, 500, 50, 50);
+		
+	
+	}
 
 	/**
 	 * Method to show large changes in color

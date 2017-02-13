@@ -131,6 +131,13 @@ public class PictureTester
     canvas.explore();
   }
   
+  public static void testMyCollage()
+  {
+    Picture canvas = new Picture("640x480.jpg");
+    canvas.myCollage();
+    canvas.explore();
+  }
+  
   public static void testCopy()
   {
     Picture canvas = new Picture("640x480.jpg");
@@ -180,8 +187,7 @@ public class PictureTester
 //    testMirrorGull();
     //testMirrorDiagonal();
 //    testCollage();
-    testCopy();
-    testPartCopy();
+    testMyCollage();
     //testEdgeDetection();
     //testEdgeDetection2();
     //testChromakey();
