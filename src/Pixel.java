@@ -357,6 +357,20 @@ public class Pixel {
 				.sqrt(redDistance * redDistance + greenDistance * greenDistance + blueDistance * blueDistance);
 		return distance;
 	}
+	
+	public double colorAverage(Color testColor) {
+		double red = this.getRed();
+		double blue = this.getBlue();
+		double green = this.getGreen();
+		
+		double red2 = testColor.getRed();
+		double blue2 = testColor.getBlue();
+		double green2 = testColor.getGreen();
+		
+		double average1 = (red + blue + green)/3;
+		double average2 = (red2 + blue2 + green2)/3;
+		return Math.abs(average1-average2);
+	}
 
 	/**
 	 * Method to compute the color distances between two color objects
